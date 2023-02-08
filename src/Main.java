@@ -1,21 +1,26 @@
 public class Main {
     public static void main(String[] args) {
 
+        Car toyota =  new Car("Toyota", "SA",3.5, new GroupB("Sasha", true, 12.));
 
-        Car car1 = new Car(3.5, "Автомат", "sd123lv", 4, "Универсальный");
-        Car car2= new Car(2.5, "Автомат", "fb86gf", 4, "Универсальный");
-        Car car3 = new Car(3.6, "Автомат", "dd35dmd", 4, "Универсальный");
+        Bus gaz = new Bus("Gazel", "PA1", 3.4, new GroupC("Dasha", true, 10.));
 
-       Transport transport1 = new Transport ("Toyota", "250 SL", 2010, "Япония", "Красный", 120);
-       Transport transport2 = new Transport ("Range Rover", "698", 2005, "СССР", "жёлтый", 110);
-       Transport transport3 = new Transport("Линкольн", "65Н", 2015, "США", "Белый", 150);
+        Trucks kama = new Trucks("Камаз","BH",5.5, new GroupD("Vova", true, 25.));
 
-        System.out.println(car1);
-        System.out.println(transport1);
-        System.out.println(car2);
-        System.out.println(transport2);
-        System.out.println(car3);
-        System.out.println(transport3);
+       toyota.pitStop();
+       toyota.maxSpeed(179);
+        kama.maxSpeed(180);
+        gaz.startMoving();
+        kama.bestTimeLap("6,39 секунд");
+
+       System.out.println(toyota.getDriver().toString() + " " + " Управляет" + " " + toyota + " " + "и будет учавствовать в гонке");
+        System.out.println(gaz.getDriver().toString() + " " + " Управляет" + " " + gaz + " " + "и будет учавствовать в гонке");
+        System.out.println(kama.getDriver().toString() + " " + " Управляет" + " " + kama + " " + "и будет учавствовать в гонке");
+
+
     }
-}
+
+
+    }
+
 

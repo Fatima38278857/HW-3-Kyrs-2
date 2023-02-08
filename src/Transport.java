@@ -1,80 +1,75 @@
-public  class  Transport {
+public abstract class  Transport  <T extends Driver>{
 
+    private  String make; // Марка
+    private  String model; // Модель
+    private double engineCapacity;  // Обьем двиголеля
+    private T driver;
 
-
-
-    private String brand;  // Бренд
-        private String model; // Модель
-        private int yearManufacture ; // Год производства
-        private String countryManufacture ; // Страна сборки
-        private String bodyColor; // Цвет кузова
-        private int maximumMovementSpeed; // Максимальная скорость
-
-
-    public Transport() {
+    public Transport() { // Пустой конструктор
         super();
-
     }
 
-    public Transport(String brand, String model, int yearManufacture, String countryManufacture, String bodyColor, int maximumMovementSpeed) {
-        this.brand = "Toyota";
-        this.model = " model";
-        this.yearManufacture = 2005;
-        this.countryManufacture = "Germany";
-        this.bodyColor = "black";
-        this.maximumMovementSpeed = 95;
+    public Transport(String make, String model, double engineCapacity, T driver) {
+        super();
+        this.make = make;
+        this.model = model;
+        this.engineCapacity = engineCapacity;
+        this.driver = driver;
     }
 
+    public String getMake() {
+        return make;
+    }
 
-    public String getBrand() {
-        return brand ;
+    public void setMake(String make) {
+        this.make = make;
     }
 
     public String getModel() {
         return model;
     }
 
-    public int getYearManufacture() {
-        return yearManufacture  ;
-    }
-
-    public String getCountryManufacture() {
-        return countryManufacture;
-    }
-
-    public String getBodyColor() {
-        return bodyColor;
-    }
-
-    public int getMaximumMovementSpeed() {
-        return maximumMovementSpeed;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand == null ? "Toyota" : brand;
-    }
-
     public void setModel(String model) {
-        this.model = model == null ? "SA" : model;
+        this.model = model;
     }
 
-    public void setBodyColor(String bodyColor) {
-        this.bodyColor = bodyColor == null ? "Black" : bodyColor;
+    public double getEngineCapacity() {
+        return engineCapacity;
     }
 
-    public void setMaximumMovementSpeed(int maximumMovementSpeed) {
-        this.maximumMovementSpeed = maximumMovementSpeed == 0 ? 95 : maximumMovementSpeed;
+    public void setEngineCapacity(double engineCapacity) {
+        this.engineCapacity = engineCapacity;
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
+
+    public void startMoving() {  // Метод отвечает за движение
+        System.out.println("Hачать движение");
+    }
+
+    public void finishMovement() { // Метод отвечает за остановку движения
+        System.out.println("Остановить движение");
+    }
+
+
+
+    public void bestTimeLap(String timeLap) {
+        System.out.println("Лучшее время проезда круга" + timeLap);
+    }
+
+    public void maxSpeed(int maxSpeed) {
+        System.out.println("Максимальная скорость " + maxSpeed + " " + " км/ч");
+
     }
 
     @Override
     public String toString() {
-        return "Transport{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", yearManufacture=" + yearManufacture +
-                ", countryManufacture='" + countryManufacture + '\'' +
-                ", bodyColor='" + bodyColor + '\'' +
-                ", maximumMovementSpeed=" + maximumMovementSpeed +
-                '}';
+        return " "+ make + " "+ model + " объем двигателя "+ engineCapacity;
     }
 }

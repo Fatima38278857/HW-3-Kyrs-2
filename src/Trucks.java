@@ -1,13 +1,11 @@
-public  class Car  extends Transport <GroupB> implements Competing{
-
-
-    public Car() {
-
+public class Trucks extends Transport <GroupD> implements Competing {
+    public Trucks() {
     }
 
-    public Car(String make, String model, double engineCapacity, GroupB driver) {
+    public Trucks(String make, String model, double engineCapacity, GroupD driver) {
         super(make, model, engineCapacity, driver);
     }
+
 
     public void startMoving() {
         System.out.println("Hачать движение");
@@ -19,17 +17,17 @@ public  class Car  extends Transport <GroupB> implements Competing{
 
     @Override
     public void pitStop() {
-        System.out.println( getMake()+ " Заехал на пит-стоп");
+        System.out.println();
     }
 
     @Override
     public void bestTimeLap() {
-        System.out.println( getMake()+ "Лучшее время круга");
+
     }
 
     @Override
     public void maxSpeed() {
-        System.out.println("Максимальная скорость " );
+
     }
 
     @Override
@@ -37,14 +35,5 @@ public  class Car  extends Transport <GroupB> implements Competing{
         return "Транспортным средством " + super.toString();
     }
 }
-
-
-
-
-
-
-
-
-
 
 
